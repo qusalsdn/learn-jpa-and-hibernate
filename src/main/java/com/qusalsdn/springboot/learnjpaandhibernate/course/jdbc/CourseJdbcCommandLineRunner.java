@@ -16,5 +16,7 @@ public class CourseJdbcCommandLineRunner implements CommandLineRunner { // imple
         repository.insert(new Course(2, "Learn Azure Now!", "qusalsdn"));
         repository.insert(new Course(3, "Learn DevOps Now!", "qusalsdn"));
         repository.deleteById(1);
+        System.out.println(repository.findById(2));
+        System.out.println(repository.findById(3));
     }
 }
