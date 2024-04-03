@@ -21,8 +21,19 @@ public class CourseCommandLineRunner implements CommandLineRunner { // implement
         repository.save(new Course(1, "Learn AWS Now!", "qusalsdn"));
         repository.save(new Course(2, "Learn Azure Now!", "qusalsdn"));
         repository.save(new Course(3, "Learn DevOps Now!", "qusalsdn"));
+
         repository.deleteById(1l);
+
         System.out.println(repository.findById(2l));
         System.out.println(repository.findById(3l));
+
+        System.out.println(repository.findAll());
+        System.out.println(repository.count());
+
+        System.out.println(repository.findByAuthor("qusalsdn"));
+        System.out.println(repository.findByAuthor(""));
+
+        System.out.println(repository.findByName("Learn DevOps Now!"));
+        System.out.println(repository.findByName("Learn DevOps Now"));
     }
 }
