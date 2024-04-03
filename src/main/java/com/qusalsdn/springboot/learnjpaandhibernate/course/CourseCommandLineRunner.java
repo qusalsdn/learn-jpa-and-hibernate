@@ -3,6 +3,7 @@ package com.qusalsdn.springboot.learnjpaandhibernate.course;
 import com.qusalsdn.springboot.learnjpaandhibernate.course.Course;
 import com.qusalsdn.springboot.learnjpaandhibernate.course.jdbc.CourseJdbcRepository;
 import com.qusalsdn.springboot.learnjpaandhibernate.course.jpa.CourseJpaRepository;
+import com.qusalsdn.springboot.learnjpaandhibernate.course.springDataJpa.CourseSpringDataJpaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -12,16 +13,19 @@ public class CourseCommandLineRunner implements CommandLineRunner { // implement
 //    @Autowired
 //    private CourseJdbcRepository repository;
 
+//    @Autowired
+//    private CourseJpaRepository repository;
+
     @Autowired
-    private CourseJpaRepository repository;
+    private CourseSpringDataJpaRepository repository;
 
     @Override
     public void run(String... args) throws Exception {
-        repository.insert(new Course(1, "Learn AWS Now!", "qusalsdn"));
-        repository.insert(new Course(2, "Learn Azure Now!", "qusalsdn"));
-        repository.insert(new Course(3, "Learn DevOps Now!", "qusalsdn"));
-        repository.deleteById(1);
-        System.out.println(repository.findById(2));
-        System.out.println(repository.findById(3));
+        repository.save(new Course(1, "Learn AWS Now!", "qusalsdn"));
+        repository.save(new Course(2, "Learn Azure Now!", "qusalsdn"));
+        repository.save(new Course(3, "Learn DevOps Now!", "qusalsdn"));
+        repository.deleteById(1l);
+        System.out.println(repository.findById(2l));
+        System.out.println(repository.findById(3l));
     }
 }
