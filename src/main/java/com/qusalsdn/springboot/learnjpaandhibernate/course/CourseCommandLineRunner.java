@@ -1,8 +1,5 @@
 package com.qusalsdn.springboot.learnjpaandhibernate.course;
 
-import com.qusalsdn.springboot.learnjpaandhibernate.course.Course;
-import com.qusalsdn.springboot.learnjpaandhibernate.course.jdbc.CourseJdbcRepository;
-import com.qusalsdn.springboot.learnjpaandhibernate.course.jpa.CourseJpaRepository;
 import com.qusalsdn.springboot.learnjpaandhibernate.course.springDataJpa.CourseSpringDataJpaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
