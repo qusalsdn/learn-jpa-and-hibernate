@@ -1,8 +1,16 @@
 package com.qusalsdn.springboot.learnjpaandhibernate.course;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
+@Entity
 public class Course {
+    @Id
     private long id;
+    //    @Column(name = "name") 엔터티와 테이블에서 이름이 같으면 굳이 선언하지 않아도 된다.
     private String name;
+    //    @Column(name = "author")
     private String author;
 
     public Course() {
